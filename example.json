@@ -1,0 +1,17 @@
+var fmr = {
+  state_alpha: 'AL',
+  county_town_name: 'Autauga CountyN',
+  countyname: 'Autauga County',
+  Areaname: 'Montgomery, AL MSA',
+  Metro_code: 'METRO33860M33860',
+  fmr0: '628',
+  fmr1: '663',
+  fmr2: '788',
+  fmr3: '1084',
+  fmr4: '1288',
+  ulw0: '12.08 ',
+  ulw1: '12.75',
+  ulw2: '15.15',
+  ulw3: '20.85',
+  ulw4: '24.77
+};
