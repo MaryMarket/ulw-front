@@ -5,8 +5,10 @@
   <title>Universal Living Wage Calculator</title>
   <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
   <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="ulwcalc.js"></script>
 </head>
 <body>  
@@ -22,7 +24,7 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>What kind of housing do you need? This calculator is based on Fair Market Rents set by HUD. Please select your preferred housing:</label> 
-                  <select class="form-control" name="fmr" id="fmr" required data-validation-required-message="Your preferred housing is required. Please selct an option.">
+                  <select class="dropdown-menu" role="menu" name="fmr" id="fmr" required data-validation-required-message="Your preferred housing is required. Please selct an option.">
                     <option value="fmr0">Efficiency apartment</option>
                     <option value="fmr1">1 bedroom apartment</option>
                     <option value="fmr2">2 bedroom apartment</option>
@@ -35,7 +37,7 @@
                 <div class="row control-group">
                   <div class="form-group col-xs-12 floating-label-form-group controls">
                     <label>Select your state and we'll get started:</label>
-                    <select class="form-control" name="state" id="state_alpha" required data-validation-required-message="Please enter your state.">
+                    <select class="dropdown-menu" role="menu" name="state" id="state_alpha" required data-validation-required-message="Please enter your state.">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -95,8 +97,16 @@
                 </div>
                 <div class="row control-group">
                   <div class="form-group col-xs-12 floating-label-form-group controls">
-                    <label>Enter your city. If you live in a rural area, enter the place where you get your mail:</label>
-                    <input type="text" placeholder="City" class="form-control" id="Metro_code" required data-validation-required-message="Please enter your city.">
+                    <label>Select your city. If you live in a rural area, enter the place where you get your mail:</label>
+                    <select class="dropdown-menu" role="menu" name="Metro_code" id="Metro_code" required data-validation-required-message="Please enter your city or town.">
+                      <option value="METRO33860M33860">Montgomery, AL MSA</option>
+                      <option value="METRO21820M21820">Fairbanks, AK MSA</option>
+                      <option value="METRO38060M38060">Phoenix-Mesa-Glendale, AZ MSA</option>
+                      <option value="METRO22220M22220">Fayetteville-Springdale-Rogers, AR HUD Metro FMR Area</option>
+                      <option value="METRO41860MM7360">San Francisco, CA HUD Metro FMR Area</option>
+                      <option value="METRO19740M19740">Denver-Aurora-Broomfield, CO MSA</option>
+                      <option value="NCNTY09005N09005">Litchfield County, CT</option>
+                    </select>
                       <p class="help-block text-danger"></p>
                     </div>
                   </div>
@@ -107,7 +117,7 @@
                   <div class="row">
                     <div class="form-group col-xs-12">
                       <button id="load" onclick="sendAJAX()" class="btn btn-success btn-sm button">Calculate!</button>
-                      <div id="output"> </div>
+                      <div id="output">Output after "Calcualte button is clicked: " </div>
                   </div>
                 </div>
               </form>
